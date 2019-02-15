@@ -1,0 +1,35 @@
+server:
+  port: ${port}  #服务端口
+
+spring:
+  datasource:
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: Alex2017!
+      driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: usermanager  #服务名
+
+eureka:
+  client:
+    registerWithEureka: true  #是否注册自己到eureka服务中，默认不注册
+    fetchRegistry: true     #是否从eureka服务中获取注册信息
+    serviceUrl:   #eureka客户端与服务器交互的地址
+      defaultZone: http://127.0.0.1:6871/eureka/,http://127.0.0.1:6872/eureka/ #自己注册到eureka那个服务,可注册多个，用，分隔
+    eurekaServerConnectTimeoutSeconds: 60
+    eurekaServerReadTimeoutSeconds: 60
+  instance:
+    prefer-ip-address: true  #将自己的ip注册到eeureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
+    lease-expiration-duration-in-seconds: 30   #续约更新时间间隔
+    lease-renewal--interval-in-seconds: 10     #续约到期时间间隔，默认90
+    leaseRenewalIntervalInSeconds: 10     #心跳时间
+  #server:
+   # enable-self-preservation: false   #禁用自我保护模式
+   # eviction-interval-timer-in-ms: 60000  #清理间隔（毫秒）
+
+mybatis:
+  config-locations: classpath:mybatis-config.xml
+  mapper-locations: classpath:com/mgp/user/usermanager/dao/*.xml
+

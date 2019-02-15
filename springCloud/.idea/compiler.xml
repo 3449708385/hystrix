@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ribbon" />
+        <module name="springCloud" />
+        <module name="usermanager" />
+        <module name="usermanager (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ribbon" target="1.8" />
+      <module name="springCloud" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="usermanager" target="1.8" />
+      <module name="usermanager (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
